@@ -7,6 +7,7 @@ const Login = () => {
   const [error, setError] = useState(null)
 
   const handleSubmit = async (e)=>{
+    
     e.preventDefault()
     try{
       const response = await axios.post(
@@ -18,7 +19,11 @@ const Login = () => {
         
         
     }catch(error){
-            
+          if(error.response && !error.response.data.success)  {
+            setError(error.response.data.error)
+          }else{
+            setError('server error')
+          }
     }
   }
   return (
@@ -45,6 +50,7 @@ const Login = () => {
             placeholder="******"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
             onChange={(e)=> setPassword(e.target.value)}
+            required
           />
         </div>
         <div className="flex items-center justify-between mb-6 text-sm text-gray-600">
