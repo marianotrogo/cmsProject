@@ -20,6 +20,8 @@ const AuthContext = ({ children }) => {
               "Authorization": `Bearer ${token}`
             },
           });
+          console.log(response);
+          
 
           if (response.data.success) {
             setUser(response.data.user)
