@@ -17,9 +17,9 @@ const AdminSidebar = () => {
                 className="flex items-center space-x-4 block py-2.5 px-4 rounded">
                 <span>Link 2</span>
             </NavLink>
-            <NavLink to="/admin-dashboard"
+            <NavLink to="/admin-dashboard/departments"
                 className="flex items-center space-x-4 block py-2.5 px-4 rounded">
-                <span>Link 3</span>
+                <span>Departments</span>
             </NavLink>
             <NavLink to="/admin-dashboard"
             className="flex items-center space-x-4 block py-2.5 px-4 rounded">

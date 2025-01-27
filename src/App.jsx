@@ -5,6 +5,9 @@ import './App.css'
 import EmployeDashboard from './pages/EmployeDashboard'
 import PrivateRoutes from './utils/PrivateRoutes'
 import RoleBaseRoutes from './utils/RoleBaseRoutes'
+import AdminSummary from './components/dashboard/AdminSummary'
+import DepartmentList from './components/departments/DepartmentList'
+import AddDepartment from './components/departments/AddDepartment'
 
 
 const App = () => {
@@ -19,7 +22,12 @@ const App = () => {
               <AdminDash />
             </RoleBaseRoutes>
           </PrivateRoutes>
-        }></Route>
+        }>
+
+        <Route index element={<AdminSummary/>}></Route>
+        <Route path='departments' element={<DepartmentList />}></Route>
+        <Route path='add-department' element={<AddDepartment />}></Route>
+        </Route>
         <Route path='/employee-dashboard' element={<EmployeDashboard />}></Route>
       </Routes>
     </BrowserRouter>
