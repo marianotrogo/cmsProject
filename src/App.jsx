@@ -24,9 +24,11 @@ const App = () => {
           </PrivateRoutes>
         }>
 
-        <Route index element={<AdminSummary/>}></Route>
-        <Route path='departments' element={<DepartmentList />}></Route>
-        <Route path='add-department' element={<AddDepartment />}></Route>
+        <Route index element={<AdminSummary/>}/>
+        <Route path='departments'>
+          <Route index element={<DepartmentList/>}/>
+          <Route path='add' element={<AddDepartment/>}/>
+        </Route>
         </Route>
         <Route path='/employee-dashboard' element={<EmployeDashboard />}></Route>
       </Routes>
