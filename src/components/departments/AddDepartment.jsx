@@ -18,8 +18,6 @@ const AddDepartment = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Validación de campos vacíos
         if (!department.dep_name || !department.description) {
             setError('All fields are required.');
             return;
