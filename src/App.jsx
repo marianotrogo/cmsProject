@@ -9,6 +9,8 @@ import AdminSummary from './components/dashboard/AdminSummary'
 import DepartmentList from './components/departments/DepartmentList'
 import AddDepartment from './components/departments/AddDepartment'
 import EditDepartment from './components/departments/EditDepartment'
+import List from './components/employee/List'
+import Add from './components/employee/Add'
 
 
 const App = () => {
@@ -29,8 +31,10 @@ const App = () => {
         <Route path='departments'>
           <Route index element={<DepartmentList/>}/>
           <Route path='add' element={<AddDepartment/>}/>
-          <Route path='departments/:id' element={<EditDepartment/>}/>
+          <Route path=':id' element={<EditDepartment/>}/>
         </Route>
+          <Route path='employee' element={<List/>}/>
+          <Route path='add-employee' element={<Add/>}/>
         </Route>
         <Route path='/employee-dashboard' element={<EmployeDashboard />}></Route>
       </Routes>
